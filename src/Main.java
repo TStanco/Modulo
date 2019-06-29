@@ -1,4 +1,5 @@
 import java.io.UnsupportedEncodingException;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -6,11 +7,8 @@ public class Main {
 
         String name = "Tomek Stanko";
         char[] ch = name.toCharArray();
-        int sum = 0;
-        for(int i=0; i<ch.length; i++)
-        {
-        sum +=(int) ch[i];
-        }
+        int sum = IntStream.range(0, ch.length).map(i -> (int) ch[i]).sum();
+
         System.out.println(sum%2);
     }
 }
